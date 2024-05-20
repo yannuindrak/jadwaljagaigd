@@ -1,13 +1,74 @@
 <template>
-  <br /><br />
-  {{ tampungKSM }} <br />
-  <!-- {{ tahun }} - {{ bulan }} - {{ tanggal }} || {{ jam }} : {{ menit }} : {{ detik }} <br> -->
-  {{ waktuSekarang }} <br />
-  {{ tanggalSekarang }} <br />
-  {{ tanggalKemarin }} <br />
-  {{ tanggalBesok }}
-  <br /><br />
-  <!-- {{ jdwlDokters }} -->
+  <v-app>
+    <v-main>
+      <v-container class="px-10 mt-m2" fluid>
+        <v-carousel height="100%" cycle :interval="2000" hide-delimiters>
+          <v-carousel-item class="bg-light-white text-center">
+            <v-row dense>
+              <v-col v-for="(variant, i) in variants" :key="i" cols="14" sm="4">
+                <v-card
+                  :variant="variant"
+                  color="#757575"
+                  theme="dark"
+                  class="rounded-xl"
+                  height="285"
+                >
+                  <div class="d-flex flex-no-wrap justify-space-between">
+                    <v-img
+                      src="~/assets/1.png"
+                      class="mr-4 mt-5"
+                      absolute
+                    ></v-img>
+                    <div>
+                      <v-card-title class="text-h4 mt-10">
+                        KSM BEDAH
+                      </v-card-title>
+                      <v-card-subtitle> Jadwal </v-card-subtitle>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+          <v-carousel-item class="bg-light-white text-center">
+            <v-row dense>
+              <v-col v-for="(variant, i) in variants" :key="i" cols="12" sm="4">
+                <v-card
+                  color="variant"
+                  theme="dark"
+                  class="rounded-xl"
+                  height="285"
+                >
+                  <div class="d-flex flex-no-wrap justify-space-between">
+                    <v-img
+                      src="~/assets/1.png"
+                      class="mr-4 mt-5"
+                      absolute
+                    ></v-img>
+                    <div>
+                      <v-card-title class="text-h4 mt-10">
+                        KSM BEDAH
+                      </v-card-title>
+                      <v-card-subtitle> Jadwal </v-card-subtitle>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
+<script>
+export default {
+  data: () => ({
+    variants: ["elevated", "flat", "tonal", "outlined", "text", "plain"],
+  }),
+};
+</script>
+<!-- <template>
   <v-row dense>
     <v-carousel
       cycle
@@ -19,9 +80,11 @@
       <v-carousel-item v-for="(bebas, i) in tampungKSM" :key="i">
         <v-card
           :color="color"
-          variant="tonal"
-          width="240px"
-          height="400px"
+          variant="elevated
+          "
+          width="350px"
+          height="700px"
+          npm
           class="align-center"
           color="surface-variant"
         >
@@ -184,4 +247,4 @@ h1 {
 p {
   margin: 20px 0px 20px 0px;
 }
-</style>
+</style> -->
